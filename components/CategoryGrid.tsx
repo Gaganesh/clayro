@@ -1,4 +1,25 @@
-const categories = ["Plates", "Bowls", "Cups & Mugs", "Platters"];
+const categories = [
+  {
+    name: "Plates",
+    image: "/categories/plates.png",
+    description: "Dinner plates, quarter plates, pasta plates"
+  },
+  {
+    name: "Bowls",
+    image: "/categories/bowls.png",
+    description: "Soup bowls, serving bowls, dessert bowls"
+  },
+  {
+    name: "Cups & Mugs",
+    image: "/categories/cups.png",
+    description: "Coffee cups, tea mugs, hotel cups"
+  },
+  {
+    name: "Platters",
+    image: "/categories/platters.png",
+    description: "Serving platters for presentation"
+  }
+];
 
 export default function CategoryGrid() {
   return (
@@ -9,9 +30,18 @@ export default function CategoryGrid() {
         {categories.map((cat, index) => (
           <div
             key={index}
-            className="h-48 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition"
+            className="relative rounded-xl overflow-hidden group cursor-pointer"
           >
-            <h3 className="text-lg font-medium">{cat}</h3>
+            <img
+              src={cat.image}
+              alt={cat.name}
+              className="w-full h-48 object-cover group-hover:scale-110 transition"
+            />
+
+            <div className="absolute bottom-0 bg-black/60 w-full p-3 text-white">
+              <h3 className="font-semibold">{cat.name}</h3>
+              <p className="text-xs">{cat.description}</p>
+            </div>
           </div>
         ))}
       </div>
