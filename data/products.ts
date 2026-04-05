@@ -3,6 +3,7 @@ export const products = [
     name: "Full Plate",
     category: "Plates",
     size: "10-12 inch",
+    material: "charcoal",
     startingPrice: 180,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775303323/demo_plate_uvyawo.png",
   },
@@ -10,6 +11,7 @@ export const products = [
     name: "Quarter Plate",
     category: "Plates",
     size: "6-8 inch",
+    material: "charcoal",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775303409/Screenshot_2026-04-04_at_5.20.01_PM_ac0flw.png",
   },
@@ -17,12 +19,14 @@ export const products = [
     name: "Quarter Plate",
     category: "Plates",
     size: "6-8 inch",
+    material: "white",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775303852/Screenshot_2026-04-04_at_5.27.25_PM_qsrv9u.png",
   },
   {
     name: "Quarter Plate",
     category: "Plates",
+    material: "charcoal",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775303941/Screenshot_2026-04-04_at_5.28.57_PM_pt8ryn.png",
@@ -30,6 +34,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Plates",
+    material: "speckle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775304013/Screenshot_2026-04-04_at_5.30.08_PM_f1pmoh.png",
@@ -37,6 +42,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Plates",
+    material: "speckle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775304231/Screenshot_2026-04-04_at_5.33.45_PM_lqtstq.png",
@@ -44,6 +50,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Plates",
+    material: "matte",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775304246/Screenshot_2026-04-04_at_5.33.59_PM_appbqh.png",
@@ -51,6 +58,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Plates",
+    material: "blend",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775304267/Screenshot_2026-04-04_at_5.34.14_PM_esftdm.png",
@@ -58,6 +66,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Plates",
+    material: "sprinkle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775304270/Screenshot_2026-04-04_at_5.34.25_PM_c30dq3.png",
@@ -67,6 +76,7 @@ export const products = [
    {
     name: "Full Plate",
     category: "Bowls",
+    material: "charcoal",
     size: "10-12 inch",
     startingPrice: 180,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305200/Screenshot_2026-04-04_at_5.49.51_PM_q9keg3.png",
@@ -74,6 +84,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+     material: "white",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305170/Screenshot_2026-04-04_at_5.49.24_PM_gmif5s.png",
@@ -81,6 +92,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+    material: "speckle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305146/Screenshot_2026-04-04_at_5.48.59_PM_cjxuj8.png",
@@ -88,6 +100,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+    material: "matte",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305109/Screenshot_2026-04-04_at_5.48.23_PM_kbvghq.png",
@@ -95,6 +108,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+    material: "blend",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305088/Screenshot_2026-04-04_at_5.48.02_PM_lkrf6r.png",
@@ -102,6 +116,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+    material: "sprinkle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305068/Screenshot_2026-04-04_at_5.47.38_PM_t2ggrj.png",
@@ -109,6 +124,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+    material: "charcoal",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305044/Screenshot_2026-04-04_at_5.47.20_PM_rhfdhh.png",
@@ -116,6 +132,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+    material: "white",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305009/Screenshot_2026-04-04_at_5.46.43_PM_fmrgxg.png",
@@ -123,6 +140,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Bowls",
+    material: "speckle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775304709/Screenshot_2026-04-04_at_5.41.42_PM_pyz0ib.png",
@@ -132,6 +150,7 @@ export const products = [
    {
     name: "Full Plate",
     category: "Cups & Mugs",
+    material: "matte",
     size: "10-12 inch",
     startingPrice: 180,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305451/Screenshot_2026-04-04_at_5.54.01_PM_nulojh.png",
@@ -139,6 +158,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "blend",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305468/Screenshot_2026-04-04_at_5.54.23_PM_p796fl.png",
@@ -146,6 +166,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "sprinkle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305499/Screenshot_2026-04-04_at_5.54.46_PM_u14uxf.png",
@@ -153,6 +174,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "charcoal",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305499/Screenshot_2026-04-04_at_5.54.46_PM_u14uxf.png",
@@ -160,6 +182,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "white",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305509/Screenshot_2026-04-04_at_5.54.57_PM_abjyxg.png",
@@ -167,6 +190,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "speckle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305519/Screenshot_2026-04-04_at_5.55.07_PM_gpwn1e.png",
@@ -174,6 +198,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "matte",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305531/Screenshot_2026-04-04_at_5.55.16_PM_us5kht.png",
@@ -181,6 +206,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "blend",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305553/Screenshot_2026-04-04_at_5.55.30_PM_mo7d9m.png",
@@ -188,6 +214,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Cups & Mugs",
+    material: "sprinkle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775305555/Screenshot_2026-04-04_at_5.55.49_PM_f7kkzm.png",
@@ -196,6 +223,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Platters",
+    material: "charcoal",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775307899/Screenshot_2026-04-04_at_6.34.53_PM_ofspvh.png",
@@ -203,6 +231,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Platters",
+     material: "white",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775307652/Screenshot_2026-04-04_at_6.30.41_PM_fgfo2j.png",
@@ -210,6 +239,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Platters",
+    material: "speckle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775307652/Screenshot_2026-04-04_at_6.30.41_PM_fgfo2j.png",
@@ -217,6 +247,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Platters",
+    material: "matte",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775307705/Screenshot_2026-04-04_at_6.31.23_PM_lkdgku.png",
@@ -224,6 +255,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Platters",
+    material: "blend",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775307808/Screenshot_2026-04-04_at_6.31.37_PM_xr2jsx.png",
@@ -231,6 +263,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Platters",
+    material: "sprinkle",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775307810/Screenshot_2026-04-04_at_6.33.22_PM_lfpiik.png",
@@ -238,6 +271,7 @@ export const products = [
   {
     name: "Quarter Plate",
     category: "Platters",
+    material: "charcoal",
     size: "6-8 inch",
     startingPrice: 108,
     image: "https://res.cloudinary.com/dyhnnknyg/image/upload/v1775307834/Screenshot_2026-04-04_at_6.33.49_PM_ylbzqi.png",
