@@ -1,18 +1,13 @@
 import Link from "next/link";
 const collections = [
   {
-    name: "Snow Speckle",
-    slug: "speckle",
-    image: "/collections/snow.png",
-  },
-  {
     name: "Grey Shine",
     slug: "charcoal",
     image: "/collections/grey.png",
   },
   {
     name: "Sprinkle Glow",
-    slug: "blend",
+    slug: "sprinkle",
     image: "/collections/sprinkle.png",
   },
   {
@@ -29,6 +24,21 @@ const collections = [
     name: "White Glow",
     slug: "white",
     image: "/collections/white.png",
+  },
+  {
+    name: "Serene",
+    slug: "serene",
+    image: "/collections/serene.png",
+  },
+  {
+    name: "Designer",
+    slug: "designer",
+    image: "/collections/designer.png",
+  },
+  {
+    name: "Pillar Outer",
+    slug: "linear",
+    image: "/collections/linear.png",
   },
 ];
 
