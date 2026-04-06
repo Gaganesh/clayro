@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { products } from "@/data/products";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductsClient() {
   const searchParams = useSearchParams();
@@ -28,7 +29,7 @@ export default function ProductsClient() {
     <div className="px-6 md:px-10 py-16 md:py-20 bg-[#f7f5f2] min-h-screen">
       
       {/* Heading */}
-      <h1 className="text-3xl md:text-4xl mb-10 font-semibold">
+      <h1 className="text-3xl md:text-4xl mb-10 font-semibold text-gray-900">
         {category
           ? format(category)
           : material
@@ -40,28 +41,31 @@ export default function ProductsClient() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {filteredProducts.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl shadow hover:shadow-lg transition duration-300 overflow-hidden group"
-          >
+          
+          <Link key={index} href={`/products/${item.id}`}>
             
-            {/* Image Container */}
-            <div className="relative w-full h-64 overflow-hidden">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="object-cover group-hover:scale-105 transition duration-300"
-              />
+            <div className="bg-white rounded-xl shadow hover:shadow-lg transition duration-300 overflow-hidden group cursor-pointer">
+              
+              {/* Image */}
+              <div className="relative w-full h-64 overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition duration-300"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-4">
+                <h3 className="font-semibold text-lg text-gray-900">{item.name}</h3>
+                <p className="text-sm text-gray-500">{item.size}</p>
+              </div>
+
             </div>
 
-            {/* Content */}
-            <div className="p-4">
-              <h3 className="font-semibold text-lg">{item.name}</h3>
-              <p className="text-sm text-gray-500">{item.size}</p>
-            </div>
+          </Link>
 
-          </div>
         ))}
 
       </div>
