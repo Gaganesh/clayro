@@ -44,26 +44,33 @@ const collections = [
 
 export default function CollectionGrid() {
   return (
-    <section className="px-10 py-20">
-      <h2 className="text-3xl mb-10">Explore Collections</h2>
+    <section className="px-6 md:px-10 py-16 md:py-20">
+  <h2 className="text-3xl mb-10">Explore Collections</h2>
 
-      <div className="grid grid-cols-3 gap-6">
-        {collections.map((item, index) => (
-          <Link
-            key={index}
-            href={`/products?material=${encodeURIComponent(item.slug.toLowerCase())}`}
-            className="relative rounded-xl overflow-hidden group block"
-          >
-            <img
-              src={item.image}
-              className="w-full h-60 object-cover group-hover:scale-110 transition"
-            />
-            <div className="absolute bottom-0 bg-black/50 w-full p-3 text-white">
-              {item.name}
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8">
+    {collections.map((item) => (
+      <Link
+        key={item.slug}
+        href={`/products?material=${encodeURIComponent(item.slug.toLowerCase())}`}
+        className="relative rounded-xl overflow-hidden group block"
+      >
+        {/* Square Image */}
+        <div className="aspect-square w-full overflow-hidden">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+          />
+        </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3 text-white">
+          {item.name}
+        </div>
+
+      </Link>
+    ))}
+  </div>
+</section>
   );
 }

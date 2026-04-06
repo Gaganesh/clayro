@@ -47,7 +47,7 @@ export default function ProductsClient() {
             <div className="bg-white rounded-xl shadow hover:shadow-lg transition duration-300 overflow-hidden group cursor-pointer">
               
               {/* Image */}
-              <div className="relative w-full h-64 overflow-hidden">
+              <div className="relative w-full aspect-square overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.name}
