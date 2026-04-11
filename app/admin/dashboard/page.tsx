@@ -119,6 +119,7 @@ export default function Dashboard() {
             <option>serene</option>
             <option>matte</option>
             <option>linear</option>
+            <option>studios</option>
           </select>
 
           {/* SIZE */}
