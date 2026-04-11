@@ -40,6 +40,11 @@ const collections = [
     slug: "linear",
     image: "/collections/linear.png",
   },
+  {
+    name: "Hand Craft (Studios)",
+    slug: "studios",
+    image: "/collections/studios.png",
+  },
 ];
 
 export default function CollectionGrid() {
