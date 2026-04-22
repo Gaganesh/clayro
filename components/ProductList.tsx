@@ -11,17 +11,16 @@ export default function ProductsClient() {
   const material = searchParams.get("material");
 
   const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/products")
       .then((res) => res.json())
       .then((dbProducts) => {
-        
-        // 🔥 MERGE BOTH
         const merged = [...dbProducts, ...staticProducts];
-
         setProducts(merged);
-      });
+        setLoading(false);
+      }).catch(() => setLoading(false));
   }, []);
 
   const filteredProducts = products.filter((item) => {
@@ -57,13 +56,13 @@ export default function ProductsClient() {
             
             <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden group cursor-pointer">
 
-              <div className="relative w-full h-64">
+             <div className="relative w-full aspect-[4/3] bg-[#f7f5f2] flex items-center justify-center">
                 <Image
                   src={item.image}
                   alt={item.name}
                   fill
                   sizes="(max-width:768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition"
+                  className="object-contain p-6 group-hover:scale-105 transition duration-500"
                 />
               </div>
 
