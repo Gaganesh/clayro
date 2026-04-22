@@ -82,7 +82,7 @@ export const products = [
   },
   {
     id: "PLT-009",
-    name: "Charcoal Plate",
+    name: "Pasta Plate",
     category: "Plates",
     material: "charcoal",
     size: "Large",
