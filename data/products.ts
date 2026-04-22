@@ -2,7 +2,7 @@ export const products = [
   // ───────────── PLATES ─────────────
   {
     id: "PLT-001",
-    name: "Full Plate",
+    name: "Pasta Plate",
     category: "Plates",
     size: "10-12 inch",
     material: "charcoal",
@@ -82,7 +82,7 @@ export const products = [
   },
   {
     id: "PLT-009",
-    name: "Pasta Plate",
+    name: "Full Plate",
     category: "Plates",
     material: "charcoal",
     size: "Large",
