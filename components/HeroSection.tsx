@@ -1,112 +1,70 @@
 "use client";
-import { useEffect, useState } from "react";
-
-const slides = [
-  {
-    image: "/hero/hero1.png",
-    title: "Crafted for Fine Dining",
-    subtitle: "Elevate every plating experience",
-  },
-  {
-    image: "/hero/hero2.png",
-    title: "Designed for HORECA",
-    subtitle: "Built for high-volume service",
-  },
-  {
-    image: "/hero/hero3.png",
-    title: "Premium Ceramic Finish",
-    subtitle: "Where design meets durability",
-  },
-  {
-    image: "/hero/hero4.png",
-    title: "Modern Tableware",
-    subtitle: "Minimal aesthetics for modern spaces",
-  },
-  {
-    image: "/hero/hero5.png",
-    title: "Reliable Bulk Supply",
-    subtitle: "Consistency you can trust",
-  },
-];
+import Image from "next/image";
 
 export default function HeroSection() {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 2000); // ✅ 2 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="flex items-center justify-between px-10 py-16 gap-10 bg-[#f7f5f2]">
+    <section className="relative w-full min-h-[85vh] md:h-[90vh] flex items-start bg-[#0f0f0f] text-white overflow-hidden">
 
-      {/* LEFT CONTENT */}
-      <div className="w-[40%]">
-        <h1 className="text-5xl font-bold mb-4 text-gray-900">
-          Clayro
-        </h1>
+      {/* BACKGROUND */}
+      <div className="absolute inset-0">
+        <img
+          src="/hero/hero1.png"
+          className="w-full h-full object-cover"
+        />
 
-        <h2 className="text-2xl mb-6 text-gray-700">
-          Crafted for Modern Dining
-        </h2>
-
-        <p className="mb-6 text-gray-600">
-          Premium ceramic crockeries designed for restaurants,
-          cafés, and hospitality spaces.
-        </p>
-
-        <div className="flex gap-4">
-          <a
-            href="/products"
-            className="bg-black text-white px-6 py-3 rounded-full"
-          >
-            Explore Collection
-          </a>
-
-          <a
-            href="https://wa.me/919899024814?text=Hi%20Clayro%2C%20please%20share%20your%20latest%20crockery%20catalogue."
-            target="_blank"
-            className="border border-black px-6 py-3 rounded-full"
-          >
-            Request Catalogue
-          </a>
-        </div>
+        {/* GRADIENT */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent md:bg-gradient-to-r md:from-black md:via-black/80 md:to-transparent bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
       </div>
 
-      {/* RIGHT CAROUSEL */}
-      <div className="w-[60%] h-[65vh] relative overflow-hidden rounded-2xl shadow-lg">
+      {/* CONTENT WRAPPER */}
+      <div className="relative z-20 w-full px-4 md:px-10 pt-4 md:pt-6">
 
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              index === current ? "opacity-100 z-10" : "opacity-0"
-            }`}
-          >
-            {/* IMAGE */}
-            <img
-              src={slide.image}
-              className="w-full h-full object-cover"
-            />
+        {/* LOGO (SUPER LEFT) */}
+        <div className="mb-4 md:mb-6 -ml-2 md:-ml-4">
+          <Image
+            src="/collections/clayro_gold_logo.png"
+            alt="Clayro"
+            width={260}
+            height={260}
+            className="w-[140px] md:w-[200px] lg:w-[240px] xl:w-[260px] h-auto drop-shadow-[0_15px_40px_rgba(0,0,0,0.35)]"
+          />
+        </div>
 
-            {/* OVERLAY */}
-            <div className="absolute inset-0 bg-black/40"></div>
+        {/* TEXT CONTENT */}
+        <div className="max-w-4xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3">
+            CLAYRO <br />
+            Ceramic | Porcelain | BoneChina Collections
+          </h1>
 
-            {/* TEXT ON IMAGE */}
-            <div className="absolute bottom-10 left-10 text-white max-w-md">
-              <h2 className="text-3xl font-semibold mb-2 animate-fade-in">
-                {slide.title}
-              </h2>
-              <p className="text-gray-200 animate-fade-in">
-                {slide.subtitle}
-              </p>
-            </div>
+          <p className="text-sm md:text-base text-gray-300 mb-4">
+            Designed for restaurants, cafés, and hospitality spaces.
+            Elegant finishes, durable builds, and consistent supply.
+          </p>
+
+          <p className="text-[#d4af37] text-sm md:text-base mb-4">
+            Trusted by 200+ hospitality partners across India.
+          </p>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="/products"
+              className="bg-[#d4af37] text-black px-5 py-3 rounded-full text-sm md:text-base font-medium text-center hover:opacity-90 transition"
+            >
+              Explore Collection
+            </a>
+
+            <a
+              href="https://wa.me/919899024814"
+              target="_blank"
+              className="border border-white px-5 py-3 rounded-full text-sm md:text-base text-center hover:bg-white hover:text-black transition"
+            >
+              WhatsApp Support
+            </a>
           </div>
-        ))}
 
+        </div>
       </div>
     </section>
   );

@@ -6,11 +6,10 @@ import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
-    <main className="bg-[#f7f5f2] text-gray-900">
+    <main className="bg-[#eeeeee] text-[#1a1a1a] overflow-x-hidden">
       <HeroSection />
       <CollectionGrid />
       <CategoryGrid />
-      <WhySection />
       <CTASection />
     </main>
   );
