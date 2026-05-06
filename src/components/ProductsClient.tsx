@@ -32,7 +32,14 @@ export default function ProductsClient({
         ? categoriesMatch(category, item.category)
         : true;
       const matchMaterial = material
-        ? materialSlugMatchesFilter(item.material, material)
+        ? materialSlugMatchesFilter(item.material, material) ||
+          // Treat some “collections” as umbrella pages over a category too.
+          // Example: clicking "Dinner set" on Home → Explore collections should show
+          // all dinner set products, even if their material is matte/white/etc.
+          ((material.toLowerCase() === "dinner-set" &&
+            categoriesMatch("Dinner set", item.category)) ||
+            (material.toLowerCase() === "gift-pack" &&
+              categoriesMatch("Gift pack", item.category)))
         : true;
       return matchCategory && matchMaterial;
     });
@@ -102,6 +109,28 @@ export default function ProductsClient({
                 {item.name}
               </h3>
               <p className="text-sm text-gray-500">{item.size}</p>
+              {isAdmin && (
+                <div className="mt-2 space-y-1 text-xs text-gray-500">
+                  <p>
+                    <span className="font-medium text-gray-700">ID:</span>{" "}
+                    <code className="rounded bg-gray-100 px-1 py-0.5">
+                      {item.id}
+                    </code>
+                  </p>
+                  <p>
+                    <span className="font-medium text-gray-700">Category:</span>{" "}
+                    <code className="rounded bg-gray-100 px-1 py-0.5">
+                      {item.category || "(empty)"}
+                    </code>
+                  </p>
+                  <p>
+                    <span className="font-medium text-gray-700">Material:</span>{" "}
+                    <code className="rounded bg-gray-100 px-1 py-0.5">
+                      {item.material || "(empty)"}
+                    </code>
+                  </p>
+                </div>
+              )}
             </Link>
           </div>
         ))}

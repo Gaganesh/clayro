@@ -207,11 +207,11 @@ const MATERIAL_OPTION_LABELS: Record<
   string
 > = {
   white: "White",
-  "gift-pack": "Gift pack",
+  "gift-pack": "Gift pack (material)",
   sprinkle: "Sprinkle",
   blend: "Blend",
   designer: "Designer",
-  "dinner-set": "Dinner set",
+  "dinner-set": "Dinner set (material)",
   serene: "Serene",
   matte: "Matte",
   linear: "Linear (pillar)",
