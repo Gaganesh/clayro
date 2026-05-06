@@ -81,7 +81,7 @@ export default function ProductsClient({
                 </Link>
               )}
               <Link
-                href={`/products/${item.id}`}
+                href={`/products/${encodeURIComponent(item.id)}`}
                 className="relative block h-full min-h-[200px] w-full"
               >
                 <Image
@@ -95,7 +95,7 @@ export default function ProductsClient({
             </div>
 
             <Link
-              href={`/products/${item.id}`}
+              href={`/products/${encodeURIComponent(item.id)}`}
               className="block p-4 hover:bg-gray-50/80"
             >
               <h3 className="text-lg font-semibold text-gray-900">

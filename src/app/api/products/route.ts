@@ -43,11 +43,18 @@ export async function POST(req: Request) {
 
     const imageUrl = uploadResponse.secure_url;
 
-    // 🔥 AUTO GENERATE ID
-    const id =
-      name.toLowerCase().replace(/\s+/g, "-") +
-      "-" +
-      Date.now();
+    function slugifyForId(input: string): string {
+      const base = input
+        .normalize("NFKD")
+        .toLowerCase()
+        // keep letters/numbers; replace everything else with hyphens
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+      return base || "product";
+    }
+
+    // AUTO GENERATE ID (URL-safe)
+    const id = `${slugifyForId(name)}-${Date.now()}`;
 
     const startingPriceRaw = formData.get("startingPrice") as string | null;
     const product: Record<string, unknown> = {
