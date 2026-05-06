@@ -4,8 +4,18 @@ import { products as staticProducts } from "@/data/products";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default async function ProductPage({ params }: any) {
-    const { id } = await params;
+type Props = { params: { id: string } };
+
+export default async function ProductPage({ params }: Props) {
+    const rawId = params?.id ?? "";
+    // Next route params are usually decoded already, but guard against encoded IDs.
+    const id = (() => {
+        try {
+            return decodeURIComponent(rawId);
+        } catch {
+            return rawId;
+        }
+    })();
 
     let product = null;
 
@@ -85,7 +95,9 @@ export default async function ProductPage({ params }: any) {
                         </a>
 
                         <a
-                            href={`https://wa.me/919899024814?text=Hi%20Clayro%2C%20I%20am%20interested%20in%20${product.name}`}
+                            href={`https://wa.me/919899024814?text=${encodeURIComponent(
+                                `Hi Clayro, I am interested in ${product.name}`
+                            )}`}
                             target="_blank"
                             className="bg-black text-white px-6 py-3 rounded-full"
                         >
