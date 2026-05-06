@@ -6,10 +6,12 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
+  const [needsConfig, setNeedsConfig] = useState(false);
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+    setNeedsConfig(false);
     setPending(true);
     try {
       const res = await fetch("/api/admin/login", {
@@ -22,6 +24,12 @@ export default function AdminLoginPage() {
         return;
       }
       const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (
+        res.status === 503 &&
+        data.error === "Admin password not configured on server"
+      ) {
+        setNeedsConfig(true);
+      }
       setError(data.error ?? "Login failed");
     } catch {
       setError("Network error");
@@ -38,6 +46,20 @@ export default function AdminLoginPage() {
         <p className="mb-6 text-center text-sm text-gray-500">
           Sign in to manage products
         </p>
+
+        {needsConfig && (
+          <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
+            <p className="font-medium">Admin is not configured.</p>
+            <p className="mt-1">
+              Set <code className="rounded bg-amber-100 px-1">ADMIN_PASSWORD</code>{" "}
+              (and ideally{" "}
+              <code className="rounded bg-amber-100 px-1">
+                ADMIN_SESSION_SECRET
+              </code>
+              ) in your production environment variables, then redeploy.
+            </p>
+          </div>
+        )}
 
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <input

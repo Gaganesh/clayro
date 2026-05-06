@@ -16,6 +16,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Admin login (production)
+
+Admin login requires environment variables in production (there is **no** hardcoded password in prod).
+
+- Copy `.env.example` → `.env.local` for local development
+- In production (Vercel/Render/etc), set:
+  - `ADMIN_PASSWORD` (the password you type on `/admin`)
+  - `ADMIN_SESSION_SECRET` (recommended; long random string used to sign the cookie)
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
