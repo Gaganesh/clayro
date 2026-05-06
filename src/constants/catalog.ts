@@ -31,6 +31,19 @@ export const ADMIN_CATEGORY_VALUES = [
 
 export type CategoryName = (typeof ADMIN_CATEGORY_VALUES)[number];
 
+function categorySlug(input: string): string {
+  return input
+    .trim()
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+const CATEGORY_SLUG_TO_LABEL: Record<string, CategoryName> = Object.fromEntries(
+  ADMIN_CATEGORY_VALUES.map((label) => [categorySlug(label), label])
+) as Record<string, CategoryName>;
+
 /**
  * If `product.category` was saved as a slug (e.g. gift-pack), map to the label
  * used in selects and `<option value>`.
@@ -38,14 +51,8 @@ export type CategoryName = (typeof ADMIN_CATEGORY_VALUES)[number];
 export function canonicalCategoryForAdmin(stored: string): string {
   const t = stored.trim();
   if (!t) return t;
-  const slug = t.toLowerCase().replace(/\s+/g, "-");
-  if (slug === "gift-pack" || slug === "giftpack") {
-    return "Gift pack";
-  }
-  if (slug === "dinner-set" || slug === "dinnerset") {
-    return "Dinner set";
-  }
-  return t;
+  const slug = categorySlug(t);
+  return CATEGORY_SLUG_TO_LABEL[slug] ?? t;
 }
 
 /** PLP/listing category filter accepts canonical name or common slug typo. */
@@ -53,9 +60,11 @@ export function categoriesMatch(
   queryCategory: string,
   productCategory: string
 ): boolean {
-  const q = canonicalCategoryForAdmin(queryCategory).toLowerCase();
-  const p = canonicalCategoryForAdmin(productCategory).toLowerCase();
-  return q === p;
+  // Compare by slug so case/punctuation/extra spaces never break category matches.
+  return (
+    categorySlug(canonicalCategoryForAdmin(queryCategory)) ===
+    categorySlug(canonicalCategoryForAdmin(productCategory))
+  );
 }
 
 const CATEGORY_CARD_DETAILS: Record<
