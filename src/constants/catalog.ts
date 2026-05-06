@@ -52,6 +52,10 @@ export function canonicalCategoryForAdmin(stored: string): string {
   const t = stored.trim();
   if (!t) return t;
   const slug = categorySlug(t);
+  // Back-compat: some older admin UIs accidentally saved display labels like
+  // "Dinner set (material slug: dinner-set)". Treat those as canonical.
+  if (slug.includes("dinner-set")) return "Dinner set";
+  if (slug.includes("gift-pack")) return "Gift pack";
   return CATEGORY_SLUG_TO_LABEL[slug] ?? t;
 }
 
